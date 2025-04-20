@@ -1,0 +1,14 @@
+:root {
+  --brand-100: #e6f7ff;
+  --brand-200: #bfebff;
+  --brand-300: #91d5ff;
+  --brand-500: #52c41a;
+}
+
+:dark {
+  --brand-100: #e6f7ff;
+  --brand-200: #bfebff;
+  --brand-300: #91d5ff;
+  --brand-500: #52c41a;
+  --test: hsl(50 100% 50%);
+}
