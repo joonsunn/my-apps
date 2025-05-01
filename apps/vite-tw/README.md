@@ -3,5 +3,5 @@
 ## Plan
 
 - [x] implement Tailwind  
-- [ ] implement Tanstack Router  
+- [ ] implement React Router DOM  
 - [ ] implement Tanstack Query  
