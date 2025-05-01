@@ -1,0 +1,23 @@
+{
+  "name": "@packages/tanstack-query",
+  "version": "1.0.0",
+  "description": "A wrapper package for Tanstack Query in a monorepo",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -b tsconfig.json",
+    "dev": "tsc -b tsconfig.json -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.8.1",
+  "dependencies": {
+    "@tanstack/react-query": "^5.75.0",
+    "react": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.10",
+    "typescript": "~5.7.2"
+  }
+}

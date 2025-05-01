@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+      "target": "ES2019", // Or a more modern ECMAScript target
+      "module": "ESNext", // Use ES modules for output
+      "lib": ["ES2020", "DOM", "DOM.Iterable", "ESNext.AsyncIterable"],
+      "jsx": "react-jsx", // Transform JSX to React.createElement calls (or jsxDEV for development)
+      "declaration": true, // Generate .d.ts declaration files
+      "emitDeclarationOnly": true, // Only emit .d.ts files, no JavaScript
+      "strict": true, // Enable all strict type-checking options
+      "esModuleInterop": true, // Enables emitting 'import * as React from ...' in .d.ts to allow importing CommonJS modules
+      "moduleResolution": "Node", // Use Node.js style module resolution
+      "baseUrl": "./", // Base directory to resolve non-absolute module names
+      "paths": {
+        "*": ["./*"] // For local imports within the package
+      },
+      "outDir": "dist", // Output directory for compiled files (.d.ts in this case)
+      "rootDir": "./src", // Specify the root folder for input files
+      "composite": true, // Enable project references for monorepo support
+      "incremental": true, // Enable incremental compilation
+      "skipLibCheck": true // Skip type checking of declaration files
+    },
+    "include": ["src"], // Include all TypeScript/JSX files in the 'src' directory
+    "exclude": ["node_modules", "dist", "**/*.test.*", "**/*.spec.*"] // Exclude these directories and test files
+  }
