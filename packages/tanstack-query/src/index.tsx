@@ -1,4 +1,17 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import {
+  QueryClient,
+  QueryClientProvider,
+  // useQuery,
+  // useMutation,
+  // useInfiniteQuery,
+  // useSuspenseQuery,
+  // useQueryClient,
+  // useIsFetching,
+  // useIsMutating,
+  // focusManager,
+  // onlineManager,
+  // dehydrate,
+} from "@tanstack/react-query";
 import React, { ReactNode } from "react";
 
 const defaultQueryClient = new QueryClient({
@@ -21,3 +34,21 @@ export const TanstackQueryProvider: React.FC<TanstackQueryProviderProps> = ({
 }) => {
   return <QueryClientProvider client={client}>{children}</QueryClientProvider>;
 };
+
+// export {
+//   useQuery,
+//   useMutation,
+//   useInfiniteQuery,
+//   useSuspenseQuery,
+//   useQueryClient,
+//   useIsFetching,
+//   useIsMutating,
+//   focusManager,
+//   onlineManager,
+//   dehydrate,
+//   QueryClient, // You might want to export QueryClient as well
+//   QueryClientProvider, // Already exported, but for completeness
+//   // ... and any other exports from @tanstack/react-query
+// };
+
+export * from "@tanstack/react-query";
