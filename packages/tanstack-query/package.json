@@ -1,0 +1,28 @@
+{
+  "name": "@packages/tanstack-query",
+  "version": "0.1.0",
+  "description": "A wrapper package for Tanstack Query in a monorepo",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "peerDependencies": {
+    "@tanstack/react-query": "^5.0.0",
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "scripts": {
+    "build": "tsc -b tsconfig.json",
+    "dev": "tsc -b tsconfig.json -w"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.2",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.9.0"
+  }
+}
