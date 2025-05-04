@@ -1,8 +1,9 @@
-
 function Home() {
   return (
-    <div>Hello world</div>
-  )
+    <div>
+      <span>Hello world</span>
+    </div>
+  );
 }
 
-export default Home
+export default Home;

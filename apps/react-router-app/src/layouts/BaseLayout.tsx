@@ -1,9 +1,7 @@
-import { Outlet } from 'react-router'
+import { Outlet } from "react-router";
 
 function BaseLayout() {
-  return (
-    <Outlet/>
-  )
+  return <Outlet />;
 }
 
-export default BaseLayout
+export default BaseLayout;
