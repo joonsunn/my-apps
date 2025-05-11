@@ -8,13 +8,13 @@ import {
 import api from "@packages/tanstack-query/src/api";
 import axios from "axios";
 
-interface Dimensions {
+export interface Dimensions {
   height: number;
   width: number;
   length: number;
 }
 
-interface Review {
+export interface Review {
   rating: number;
   comment: string;
   date: string;
@@ -22,14 +22,14 @@ interface Review {
   reviewerEmail: string;
 }
 
-interface ProductMeta {
+export interface ProductMeta {
   createdAt: string;
   updatedAt: string;
   barcode: string;
   qrCode: string;
 }
 
-interface Product {
+export interface Product {
   id: number;
   title: string;
   description: string;
@@ -54,20 +54,20 @@ interface Product {
   images: string[];
 }
 
-interface ProductResponseError {
+export interface ProductResponseError {
   message: string;
 }
 
-interface ProductsResponse {
+export interface ProductsResponse {
   products: Product[];
   total: number;
   skip: number;
   limit: number;
 }
 
-type Order = "asc" | "desc";
+export type Order = "asc" | "desc";
 
-interface ProductQuery {
+export interface ProductQuery {
   limit?: number;
   skip?: number;
   sortBy?: keyof Product;
