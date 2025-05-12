@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Chip } from "@/components/ui/chip";
 import { Review, useGetProductById } from "@packages/dummyjson-wrapper";
 import { Suspense, useEffect, useReducer, useState } from "react";
 import { useNavigate, useParams } from "react-router";
@@ -41,9 +42,12 @@ function RenderProduct({ currentProductId }: { currentProductId: number }) {
 
   return (
     <div className={"flex flex-col gap-2"}>
-      <span className={"font-extrabold"}>
-        {productData.title} <Chip>{productData.category}</Chip>
-      </span>
+      <div className={"flex flex-row gap-3 items-center"}>
+        <span className={"font-extrabold align-middle"}>{productData.title}</span>
+        <Chip variant="outlined" color="info">
+          {productData.category}
+        </Chip>
+      </div>
       <span>Rating: {productData.rating}</span>
       <span>Price: ${productData.price}</span>
       <span>Description: {productData.description}</span>
@@ -57,19 +61,11 @@ function RenderProduct({ currentProductId }: { currentProductId: number }) {
 
 export default Product;
 
-function Chip({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-      {children}
-    </span>
-  );
-}
-
 function Images({ images, productTitle }: { images: string[]; productTitle: string }) {
   return (
     <div className="flex flex-col gap-1">
       <span>Images:</span>
-      <div className="flex gap-2 max-w-fit overflow-x-auto border-solid border-2 border-slate-400 rounded-md p-2">
+      <div className="flex gap-2 max-w-fit overflow-x-auto border-solid border-2 rounded-md p-2">
         {images.map((image) => (
           <ImageWithSkeleton key={image} src={image} alt={productTitle} />
         ))}
@@ -126,7 +122,7 @@ function ReviewRenderer({ review }: { review: Review }) {
   const adjustedTime = dateTimeFormatter.format(new Date(date));
 
   return (
-    <div className={"flex flex-col gap-1 border-2 border-slate-400 border-solid rounded-md p-1"}>
+    <div className={"flex flex-col gap-1 border-2 border-solid rounded-md p-1"}>
       <span>Rating: {review.rating}</span>
       <span>{review.comment}</span>
       <span>{adjustedTime}</span>
