@@ -29,3 +29,62 @@ git add .
 ```
 
 to add the newly generated `pnpm-lock.yaml` file into the commit history.
+
+## Running Development Build
+
+On first run, ensure each of the `@packages` packages has been built and JS output generated (`pnpm build`).
+
+When making changes to an `@packages` package, ensure that package is run in dev mode (`pnpm dev`).
+
+For ease of development, you may run the `packages.pm2.config.js` PM2 file located at the root directory to run all three packages in dev mode:
+
+```bash
+pm2 start packages.pm2.config.js
+```
+
+## Adding an `@packages` package to app
+
+Need to manually add the package in `package.json`, for example:
+
+```json
+{
+    ...
+
+    "dependencies": {
+    ...
+    "@packages/utils": "workspace:*",
+    ...
+  }
+}
+```
+
+## When creating new `@packages` package
+
+Ensure the following is done:
+
+```json
+{
+  "compilerOptions": {
+    ...
+    "declaration": true,
+
+  },
+  ...
+}
+```
+
+## TailwindCSS VSCode Extension
+
+Add the following:
+
+```json
+{
+  ...
+  "tailwindCSS.experimental.configFile": {
+    ...
+    "apps/vite-tw/src/index.css": "apps/vite-tw/src/**",
+    "src/index.css": "**"
+  }
+  ...
+}
+```
