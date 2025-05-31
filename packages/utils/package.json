@@ -8,13 +8,15 @@
     "dist"
   ],
   "scripts": {
+    "test": "vitest",
     "build": "tsc -b tsconfig.json",
     "dev": "tsc -b tsconfig.json -w"
   },
   "devDependencies": {
+    "@types/node": "^22.15.29",
     "@types/react": "^19.1.2",
     "typescript": "^5.0.0",
-    "@types/node": "^22.15.29"
+    "vitest": "^3.1.4"
   },
   "keywords": [],
   "author": "",
