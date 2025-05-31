@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { useGetAllProducts } from "@packages/dummyjson-wrapper";
 import { useState } from "react";
 
@@ -9,9 +10,17 @@ function Products() {
     <div>
       <div>
         <div>
-          <button onClick={() => setPage(page - 1)}>prev</button>
+          <Button
+            onClick={() => {
+              if (page > 0) {
+                setPage(page - 1);
+              }
+            }}
+          >
+            prev
+          </Button>
           <span>page: {page}</span>
-          <button onClick={() => setPage(page + 1)}>next</button>
+          <Button onClick={() => setPage(page + 1)}>next</Button>
         </div>
         {(isLoading || isFetching) && <span>Loading...</span>}
       </div>

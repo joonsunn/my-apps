@@ -5,5 +5,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.10.0"
+  "packageManager": "pnpm@10.10.0",
+  "scripts": {
+    "dev:react-router-app": "cd apps/react-router-app && pnpm dev"
+  }
 }
