@@ -1,5 +1,9 @@
 # Monorepo
 
+This monorepo is managed using `pnpm`, hence using `pnpm` is non-negotiable.
+
+It is recommended to install `pnpm` globally using the official install script instead of through `npm` or any other package managers.
+
 ## Managing .gitignore
 
 Files that should be globally ignored (e.g. `node_modules`) should be added to the root-level `.gitignore` file.
