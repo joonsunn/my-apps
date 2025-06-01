@@ -9,7 +9,10 @@
     "lint:fix": "eslint src --ext .ts --fix",
     "format": "prettier --write \"src/**/*.ts\"",
     "dev": "ts-node --project tsconfig.json -r tsconfig-paths/register src/index.ts",
-    "dev:watch": "nodemon --watch src --exec ts-node -r tsconfig-paths/register src/index.ts"
+    "dev:watch": "nodemon --watch src --exec ts-node -r tsconfig-paths/register src/index.ts",
+    "build": "tsc && tscpaths -p tsconfig.json -s ./src -o ./dist && pnpm copy:assets",
+    "copy:assets": "cpx 'src/**/*.{json,env}' dist",
+    "start": "node dist/index.js"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +25,8 @@
     "@eslint/markdown": "^6.4.0",
     "@typescript-eslint/eslint-plugin": "^8.33.0",
     "@typescript-eslint/parser": "^8.33.0",
+    "@types/node": "^22.15.29",
+    "cpx": "^1.5.0",
     "eslint": "^9.28.0",
     "eslint-config-prettier": "^10.1.5",
     "globals": "^16.2.0",
@@ -29,9 +34,9 @@
     "prettier": "^3.5.3",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
+    "tscpaths": "^0.0.9",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.33.0",
-    "@types/node": "^22.15.29"
+    "typescript-eslint": "^8.33.0"
   },
   "dependencies": {
     "@packages/utils": "workspace:*",
